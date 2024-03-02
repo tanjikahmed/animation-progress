@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- font awesome icon cdn  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Animation skill progress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section id="cirlceBar">
+        <div class="container">
+            <div class="title text-center p-2 pb-3">
+                <h2 class="pb-1 h2 pt-2">Circle animaton progress</h2>
+                <p class="h5 pb-3">Animated circluar bar deisgn with html css and js</p>
+            </div>
+            <div class="row">
+            <div class="col-md-3">
+                <div class="round" data-value="0.90" data-size="200" data-thickness="12">
+                    <strong></strong>
+                    <span><i class="fab fa-html5"></i>
+                    HMTL SKILL</span>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="round" data-value="0.85" data-size="200" data-thickness="12">
+                    <strong></strong>
+                    <span><i class="fab fa-css3-alt"></i>
+                    CSS SKILL</span>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="round" data-value="0.80" data-size="200" data-thickness="12">
+                    <strong></strong>
+                    <span><i class="fab fa-bootstrap"></i>
+                Bootstrap </span>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="round" data-value="0.70" data-size="200" data-thickness="12">
+                    <strong></strong>
+                    <span><i class="fab fa-js-square"></i>
+                    Javascript</span>
+                </div>
+            </div>
+
+        </div>
+        <!-- <button class="btn" onclick="circlle('.round');">Refresh</button> -->
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.js""></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.js"></script>
+
+    <script>
+
+        function circlle(el) {
+            $(el).circleProgress({fill: {color: '#ff5c5c'}})
+            .on('circle-animation-progress', function(event, progress, stepValue) {
+                $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2)+'%');
+            });
+        };
+
+        circlle('.round');
+
+    </script>
+
+</body>
+</html>
